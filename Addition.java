@@ -8,11 +8,11 @@ public class Addition
 public static void main(String[]args)
 
 {
-    String firstNumber = //numero 
+    String firstNumber = 
 
-JOptionPane.showInputDialog(message:"Enter first integer");
-String secondNumber =//numero
-JobHoldUntil.showInputDialog(message:"Enter second integer");
+JOptionPane.showInputDialog(message:"Digite o primeiro número");
+String secondNumber = 
+JobHoldUntil.showInputDialog(message:"Digite o segundo numero ");
 
 int number1 = Integer.perseInt(firstNumber);
 int number2 = Integer.parseInt(secondNumber);
