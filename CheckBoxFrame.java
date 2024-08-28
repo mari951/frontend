@@ -3,9 +3,8 @@
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.util.*;
+import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
-import java.awt.font.TextAttribute;
-
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JCheckBox;
@@ -31,19 +30,6 @@ public class CheckBoxFrame extends JFrame
       italicJCheckBox = new JCheckBox("Italic"); 
       add(boldJCheckBox); // add bold checkbox to JFrame
       add(italicJCheckBox); // add italic checkbox to JFrame
-
-   } 
-
-   // private inner class for ItemListener event handling
-   private class CheckBoxHandler implements ItemListener 
-   {
-
-       // register listeners for JCheckBoxes
-       CheckBoxHandler handler = new CheckBoxHandler();
-       boldJCheckBox.addItemListener(handler);
-       italicJCheckBox.addItemListener(handler);
-    } 
- 
 
       // register listeners for JCheckBoxes
       CheckBoxHandler handler = new CheckBoxHandler();
@@ -74,24 +60,20 @@ public class CheckBoxFrame extends JFrame
       } 
    }
 } // end class CheckBoxFrame
-      {
-         font = new Font(name:"Serif",Font.PLAIN,size:14);
-         
-         textField.setFont(font);
-      
-         
-         if (underlineJCheckBox.isSelected()) {
-            font =  textField.getFont();
-            Map attributes = font.getAttributes();
-            attributes.put(TextAttribute.UNDERLINE,TextAttribute.UNDERLINE_ON);
-            textField.setFont(font.deriveFont(attributes));
-            font = new Font(attributes);
-         }
 
-          } 
-          textField.setFont(font);
-   }
+font = new Font(name:"Serif", Font.PLAIN,size:14);
 
+textField.setFont(font);
+
+if (underlineJCheckBox.isSelected()){
+font = textField.getFont();
+Map attributes = font.getAttributes();
+attributes.put(TextAttribute . UNDERLINE, TextAttribute.UNDERLINE_ON);
+textField.setFont(font.deriveFont(attributes));
+font = Font(attributes);
+}
+
+{
 
 /**************************************************************************
  * (C) Copyright 1992-2014 by Deitel & Associates, Inc. and               *
